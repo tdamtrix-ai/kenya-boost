@@ -1,44 +1,162 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KENYABOOST - TikTok Followers</title>
+<title>KENYABOOST - All Platforms</title>
 <style>
-body{margin:0;font-family:Arial;background:#000;color:#fff;text-align:center}
-.header{background:#111;padding:15px;position:sticky;top:0;border-bottom:1px solid #222}
-.logo{font-weight:bold;font-size:20px;color:#00ff88}
-.phone{color:#aaa;font-size:14px}
-.hero{padding:20px}
-.card{background:#111;border:1px solid #333;border-radius:15px;padding:15px;margin:12px auto;max-width:380px;cursor:pointer}
-.card.active{border:2px solid #00ff88;background:#0a1a10}
-.price{font-size:24px;font-weight:bold;color:#00ff88}
-.btn{padding:12px 20px;border:none;border-radius:30px;font-weight:bold;cursor:pointer;width:48%}
+body{margin:0;background:#000;color:#fff;font-family:Arial;text-align:center}
+.header{background:#111;padding:15px;position:sticky;top:0;z-index:99;border-bottom:1px solid #222}
+.logo{color:#00ff88;font-weight:bold;font-size:22px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:15px;max-width:500px;margin:auto}
+.plat{background:#111;border:1px solid #333;border-radius:12px;padding:12px;cursor:pointer;font-size:13px}
+.plat.active{background:#00ff88;color:#000;font-weight:bold;border-color:#00ff88}
+.serv{display:flex;gap:8px;justify-content:center;margin:10px;flex-wrap:wrap}
+.sbtn{background:#222;border:1px solid #444;color:#fff;padding:8px 14px;border-radius:20px;cursor:pointer}
+.sbtn.active{background:#fff;color:#000}
+.pkgs{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:15px;max-width:500px;margin:auto}
+.pkg{background:#111;border:1px solid #333;border-radius:12px;padding:12px;cursor:pointer}
+.pkg.active{border:2px solid #00ff88;background:#0a1a10}
+.price{color:#00ff88;font-weight:bold;font-size:18px}
+.price2{font-size:11px;color:#888}
+.pochi{background:#0f1f0f;border:2px solid #00ff88;border-radius:15px;padding:20px;margin:15px auto;max-width:420px}
+.btn{padding:14px;border:none;border-radius:30px;font-weight:bold;width:48%;cursor:pointer}
 .btn-call{background:#222;color:#fff;border:1px solid #444}
 .btn-wa{background:#00ff88;color:#000}
-.pochi{background:#0f1a0f;border:2px solid #00ff88;border-radius:15px;padding:20px;margin:20px auto;max-width:380px}
-.order{position:fixed;bottom:0;left:0;right:0;background:#111;padding:15px;border-top:1px solid #333}
-.order button{background:#00ff88;color:#000;width:100%;padding:16px;border:none;border-radius:30px;font-weight:bold;font-size:18px}
+.order{position:fixed;bottom:0;left:0;right:0;background:#111;padding:12px;border-top:1px solid #333}
+.order button{width:100%;padding:16px;background:#00ff88;border:none;border-radius:30px;font-weight:bold;font-size:18px}
 </style>
 </head>
 <body>
 <div class="header">
 <div class="logo">🇰🇪 KENYABOOST</div>
-<div class="phone">0794147629 | Lipa na Pochi</div>
+<div style="font-size:12px;color:#aaa">0794147629 | Pochi La Biashara</div>
 </div>
 
-<div class="hero">
-<h2>TikTok Followers 50 → 50K</h2>
-<p style="color:#aaa">Chagua package, lipa na Pochi, followers zinaingia 10 min</p>
+<h3 style="margin:15px 0 5px">1️⃣ PLATFORM</h3>
+<div class="grid" id="platforms">
+<div class="plat active" onclick="setPlat(this,'TikTok')">TikTok</div>
+<div class="plat" onclick="setPlat(this,'YouTube')">YouTube</div>
+<div class="plat" onclick="setPlat(this,'Instagram')">Instagram</div>
+<div class="plat" onclick="setPlat(this,'Facebook')">Facebook</div>
+<div class="plat" onclick="setPlat(this,'Likee')">Likee</div>
+<div class="plat" onclick="setPlat(this,'Telegram')">Telegram</div>
+<div class="plat" onclick="setPlat(this,'Threads')">Threads</div>
+<div class="plat" onclick="setPlat(this,'Snapchat')">Snapchat</div>
+<div class="plat" onclick="setPlat(this,'Spotify')">Spotify</div>
+<div class="plat" onclick="setPlat(this,'Boomplay')">Boomplay</div>
+<div class="plat" onclick="setPlat(this,'Audiomack')">Audiomack</div>
+<div class="plat" onclick="setPlat(this,'Twitter')">Twitter/X</div>
 </div>
 
-<div class="card active" onclick="selectPkg(this,50,150)">
-<div style="display:flex;justify-content:space-between"><b>50 Followers</b><span class="price">KSh 150</span></div>
+<h3>2️⃣ SERVICE</h3>
+<div class="serv">
+<div class="sbtn active" onclick="setServ(this,'Followers')">Followers</div>
+<div class="sbtn" onclick="setServ(this,'Likes')">Likes ❤️ CHEAP!</div>
+<div class="sbtn" onclick="setServ(this,'Views')">Views 👁️</div>
+<div class="sbtn" onclick="setServ(this,'Subscribers')">Subs</div>
 </div>
-<div class="card" onclick="selectPkg(this,200,400)">
-<div style="display:flex;justify-content:space-between"><b>200 Followers 🔥</b><span class="price">KSh 400</span></div>
+
+<h3 id="title">TikTok Followers</h3>
+<div class="pkgs" id="pkgs"></div>
+
+<div class="pochi">
+<h3 style="color:#00ff88;margin:0">💰 LIPA NA POCHI</h3>
+<h1 style="margin:8px 0">0794147629</h1>
+<div style="font-size:13px;color:#aaa;background:#000;padding:10px;border-radius:10px;text-align:left">
+M-Pesa > Pochi La Biashara > 0794147629<br>
+Kiasi: <b id="kiasi" style="color:#00ff88">150</b><br>
+Jina: KENYABOOST
 </div>
-<div class="card" onclick="selectPkg(this,500,800)">
-<div style="display:flex;justify-content:space-between"><b>500 Followers</b><span class="price">KSh 800</span></div>
+<p id="uchaguo" style="color:#00ff88;font-weight:bold"></p>
+<div style="display:flex;gap:10px">
+<button class="btn btn-call" onclick="location.href='tel:0794147629'">📞 CALL</button>
+<button class="btn btn-wa" onclick="orderWA()">ORDER WA</button>
 </div>
-<div class="
+</div>
+<div style="height:90px"></div>
+<div class="order">
+<button onclick="paid()">✅ NIMELIPA</button>
+</div>
+
+<script>
+let plat='TikTok'; let serv='Followers'; let qty=50; let price=150;
+let list=[50,100,200,500,1000,2000,3000,5000,10000,20000,40000,50000];
+
+function priceCalc(q,s){
+ if(s=='Likes'){
+   if(q<=50) return 30;
+   if(q<=100) return 50;
+   if(q<=200) return 80;
+   if(q<=500) return 150;
+   if(q<=1000) return 250;
+   if(q<=2000) return 400;
+   if(q<=3000) return 550;
+   if(q<=5000) return 800;
+   if(q<=10000) return 1400;
+   if(q<=20000) return 2500;
+   if(q<=40000) return 4500;
+   return 5500;
+ }
+ if(s=='Views'){
+   if(q<=50) return 20;
+   if(q<=100) return 30;
+   if(q<=200) return 50;
+   if(q<=500) return 100;
+   if(q<=1000) return 180;
+   if(q<=2000) return 300;
+   if(q<=3000) return 400;
+   if(q<=5000) return 600;
+   if(q<=10000) return 1000;
+   if(q<=20000) return 1800;
+   if(q<=40000) return 3200;
+   return 4000;
+ }
+ // Followers / Subs - Bei kubwa
+ if(q<=50) return 150;
+ if(q<=100) return 250;
+ if(q<=200) return 400;
+ if(q<=500) return 750;
+ if(q<=1000) return 1400;
+ if(q<=2000) return 2600;
+ if(q<=3000) return 3800;
+ if(q<=5000) return 6000;
+ if(q<=10000) return 11000;
+ if(q<=20000) return 20000;
+ if(q<=40000) return 38000;
+ return 45000;
+}
+
+function render(){
+ let html='';
+ list.forEach(q=>{
+  let p=priceCalc(q,serv);
+  let active=q==qty?'active':'';
+  let label=q>=1000?(q/1000)+'K':q;
+  let cheap = serv=='Likes' ? '<div class=price2>CHEAP ❤️</div>' : serv=='Views' ? '<div class=price2>SUPER CHEAP 👁️</div>' : '';
+  html+=`<div class="pkg ${active}" onclick="setQty(${q},${p},this)"><b>${label} ${serv}</b>${cheap}<div class="price">KSh ${p}</div></div>`;
+ });
+ document.getElementById('pkgs').innerHTML=html;
+ document.getElementById('title').innerText=plat+' '+serv;
+ updateText();
+}
+function setPlat(el,n){plat=n; document.querySelectorAll('.plat').forEach(e=>e.classList.remove('active')); el.classList.add('active'); render();}
+function setServ(el,n){serv=n; qty=50; price=priceCalc(50,serv); document.querySelectorAll('.sbtn').forEach(e=>e.classList.remove('active')); el.classList.add('active'); render();}
+function setQty(q,p,el){qty=q; price=p; document.querySelectorAll('.pkg').forEach(e=>e.classList.remove('active')); el.classList.add('active'); updateText();}
+function updateText(){
+ document.getElementById('kiasi').innerText=price;
+ document.getElementById('uchaguo').innerText=`Umechagua: ${plat} ${serv} ${qty} = KSh ${price}`;
+}
+function orderWA(){
+ let m=`Habari KENYABOOST, nataka ${plat} ${serv} ${qty} = KSh ${price}. Pochi 0794147629`;
+ window.open('https://wa.me/254794147629?text='+encodeURIComponent(m),'_blank');
+}
+function paid(){
+ let m=`NIMELIPA KSh ${price} Pochi 0794147629 kwa ${plat} ${serv} ${qty}`;
+ window.open('https://wa.me/254794147629?text='+encodeURIComponent(m),'_blank');
+}
+render();
+</script>
+</body>
+</html>
+
