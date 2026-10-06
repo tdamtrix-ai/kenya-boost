@@ -1,64 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kenya Boost AI - Make Money With AI</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KENYABOOST - TikTok Followers</title>
 <style>
-body{font-family:Arial;background:#000;color:#fff;text-align:center;padding:20px}
-.card{background:#111;border:1px solid #333;border-radius:15px;padding:20px;margin:15px auto;max-width:400px}
-.btn{background:#00ff88;color:#000;padding:15px 30px;border:none;border-radius:30px;font-weight:bold;font-size:18px;width:100%;cursor:pointer}
-.heart{font-size:30px;cursor:pointer}
-input{padding:12px;width:80%;border-radius:10px;border:none;margin:10px}
+body{margin:0;font-family:Arial;background:#000;color:#fff;text-align:center}
+.header{background:#111;padding:15px;position:sticky;top:0;border-bottom:1px solid #222}
+.logo{font-weight:bold;font-size:20px;color:#00ff88}
+.phone{color:#aaa;font-size:14px}
+.hero{padding:20px}
+.card{background:#111;border:1px solid #333;border-radius:15px;padding:15px;margin:12px auto;max-width:380px;cursor:pointer}
+.card.active{border:2px solid #00ff88;background:#0a1a10}
+.price{font-size:24px;font-weight:bold;color:#00ff88}
+.btn{padding:12px 20px;border:none;border-radius:30px;font-weight:bold;cursor:pointer;width:48%}
+.btn-call{background:#222;color:#fff;border:1px solid #444}
+.btn-wa{background:#00ff88;color:#000}
+.pochi{background:#0f1a0f;border:2px solid #00ff88;border-radius:15px;padding:20px;margin:20px auto;max-width:380px}
+.order{position:fixed;bottom:0;left:0;right:0;background:#111;padding:15px;border-top:1px solid #333}
+.order button{background:#00ff88;color:#000;width:100%;padding:16px;border:none;border-radius:30px;font-weight:bold;font-size:18px}
 </style>
 </head>
 <body>
-<h1>🇰🇪 Kenya Boost AI</h1>
-<p>Learn how Kenyans make money with AI daily</p>
-
-<div class="card">
-<h3 id="likeCount">❤️ 1,243 Likes</h3>
-<span class="heart" onclick="like()">❤️ Like</span>
-<p id="likeMsg"></p>
+<div class="header">
+<div class="logo">🇰🇪 KENYABOOST</div>
+<div class="phone">0794147629 | Lipa na Pochi</div>
 </div>
 
-<div class="card">
-<h3>🔥 Join 5,000+ Kenyans</h3>
-<input id="phone" placeholder="Your WhatsApp Number 07...">
-<button class="btn" onclick="subscribe()">SUBSCRIBE NOW - KSH 299</button>
-<p id="subMsg"></p>
+<div class="hero">
+<h2>TikTok Followers 50 → 50K</h2>
+<p style="color:#aaa">Chagua package, lipa na Pochi, followers zinaingia 10 min</p>
 </div>
 
-<div class="card">
-<h3>💬 Comments</h3>
-<div id="comments" style="text-align:left;background:#222;padding:10px;border-radius:10px">
-<p><b>@Brian:</b> Bro hii kitu inawork! Nimepata 2k leo 🔥</p>
-<p><b>@Faith:</b> Nimejoin jana, content ni moto</p>
+<div class="card active" onclick="selectPkg(this,50,150)">
+<div style="display:flex;justify-content:space-between"><b>50 Followers</b><span class="price">KSh 150</span></div>
 </div>
-<input id="commentInput" placeholder="Write a comment...">
-<button class="btn" style="padding:10px;margin-top:10px" onclick="addComment()">Post Comment</button>
+<div class="card" onclick="selectPkg(this,200,400)">
+<div style="display:flex;justify-content:space-between"><b>200 Followers 🔥</b><span class="price">KSh 400</span></div>
 </div>
-
-<script>
-let likes = localStorage.getItem('likes') ? parseInt(localStorage.getItem('likes')) : 1243;
-document.getElementById('likeCount').innerText = '❤️ ' + likes + ' Likes';
-function like(){
- likes++;
- localStorage.setItem('likes', likes);
- document.getElementById('likeCount').innerText = '❤️ ' + likes + ' Likes';
- document.getElementById('likeMsg').innerText = 'Thanks for liking! ❤️';
-}
-function subscribe(){
- let phone = document.getElementById('phone').value;
- if(phone.length < 9){alert('Weka number sahihi');return;}
- document.getElementById('subMsg').innerText = '✅ Check WhatsApp! Redirecting...';
- window.open('https://wa.me/2547XXXXXXXX?text=Hi%20Kenya%20Boost%20nimejoin%20na%20'+phone, '_blank');
-}
-function addComment(){
- let c = document.getElementById('commentInput').value;
- if(!c)return;
- document.getElementById('comments').innerHTML += '<p><b>@You:</b> '+c+'</p>';
- document.getElementById('commentInput').value='';
-}
-</script>
-</body>
-</html>
+<div class="card" onclick="selectPkg(this,500,800)">
+<div style="display:flex;justify-content:space-between"><b>500 Followers</b><span class="price">KSh 800</span></div>
+</div>
+<div class="
