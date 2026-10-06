@@ -1,0 +1,83 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>KENYA BOOST - All Platforms 50 to 50K</title><style>*{margin:0;padding:0;box-sizing:border-box}body{background:#080a14;color:#fff;font-family:Arial}.nav{padding:14px 16px;background:#11132a;display:flex;justify-content:space-between;position:sticky;top:0;z-index:10;border-bottom:1px solid #222}.logo{font-weight:900;font-size:18px}.logo span{color:#00ff88}.hero{text-align:center;padding:18px 12px}.hero h1{font-size:22px;line-height:1.2}.hero h1 span{color:#00ff88}.contact{display:flex;gap:8px;justify-content:center;margin-top:10px}.contact a{padding:10px 16px;border-radius:20px;text-decoration:none;font-weight:900;font-size:13px}.call{background:#fff;color:#000}.wa{background:#00ff88;color:#000}.plat{display:flex;gap:6px;overflow:auto;padding:10px 12px}.plat::-webkit-scrollbar{display:none}.p{white-space:nowrap;padding:8px 14px;border-radius:20px;background:#1a1c3a;border:1px solid #333;cursor:pointer;font-size:12px;font-weight:700}.p.active{background:#00ff88;color:#000;border-color:#00ff88}.serv{display:flex;gap:6px;overflow:auto;padding:0 12px 10px}.s{white-space:nowrap;padding:6px 12px;border-radius:15px;background:#23265a;font-size:11px;cursor:pointer}.s.active{background:#fff;color:#000}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px}.card{background:#141631;border:1px solid #26295e;border-radius:10px;padding:10px;text-align:center}.qty{font-weight:900;font-size:14px}.price{color:#00ff88;font-weight:900;margin:4px 0;font-size:15px}.btns{display:flex;gap:5px;margin-top:6px}.btns a{flex:1;padding:7px 2px;border-radius:6px;text-decoration:none;font-weight:900;font-size:10px;text-align:center}.c{background:#fff;color:#000}.w{background:#00ff88;color:#000}.orderBox{background:#11132a;padding:12px;position:sticky;bottom:0;border-top:1px solid #222}</style></head><body>
+<div class="nav"><div class="logo">KENYA<span>BOOST</span> 🇰🇪</div><div style="color:#00ff88;font-weight:900;font-size:13px">0794147629</div></div>
+<div class="hero"><h1>BUY <span id="titlePlat">ALL</span> <span id="titleServ">SERVICES</span><br><span>50 → 50K INSTANT</span></h1>
+<div class="contact"><a class="call" href="tel:0794147629">📞 CALL 0794147629</a><a class="wa" href="https://wa.me/254794147629">💬 WHATSAPP</a></div>
+<p style="font-size:10px;opacity:.5;margin-top:8px">M-Pesa: 0794147629 | No Password Needed | 0-5min Start</p>
+</div>
+
+<div class="plat" id="plat">
+<div class="p active" data-plat="facebook">Facebook</div>
+<div class="p" data-plat="tiktok">TikTok</div>
+<div class="p" data-plat="instagram">Instagram</div>
+<div class="p" data-plat="youtube">YouTube</div>
+<div class="p" data-plat="telegram">Telegram</div>
+<div class="p" data-plat="threads">Threads</div>
+<div class="p" data-plat="twitter">Twitter/X</div>
+<div class="p" data-plat="spotify">Spotify</div>
+<div class="p" data-plat="boomplay">Boomplay</div>
+<div class="p" data-plat="audiomack">Audiomack</div>
+</div>
+
+<div class="serv" id="serv">
+<div class="s active" data-serv="followers">Followers</div>
+<div class="s" data-serv="likes">Likes</div>
+<div class="s" data-serv="comments">Comments</div>
+<div class="s" data-serv="views">Views</div>
+<div class="s" data-serv="subscribers">Subscribers</div>
+<div class="s" data-serv="shares">Shares</div>
+<div class="s" data-serv="plays">Plays/Streams</div>
+</div>
+
+<div class="grid" id="grid"></div>
+
+<div class="orderBox">
+<div id="sel" style="text-align:center;font-size:12px;background:#1a1c3a;padding:8px;border-radius:6px">Chagua Platform, Service na Quantity</div>
+<div style="display:flex;gap:8px;margin-top:8px">
+<a id="callBtn" href="tel:0794147629" style="flex:1;text-align:center;background:#fff;color:#000;padding:12px;border-radius:8px;text-decoration:none;font-weight:900;font-size:13px">📞 CALL</a>
+<a id="waBtn" href="https://wa.me/254794147629" style="flex:1;text-align:center;background:#00ff88;color:#000;padding:12px;border-radius:8px;text-decoration:none;font-weight:900;font-size:13px">💬 ORDER WA</a>
+</div>
+</div>
+
+<script>
+let plat='facebook', serv='followers', qty=1000;
+const qtys=[50,100,200,500,1000,2000,5000,7000,10000,20000,50000];
+const basePrices={
+ followers:{50:150,100:250,200:400,500:750,1000:1200,2000:2200,5000:5000,7000:6500,10000:9000,20000:17000,50000:38000},
+ likes:{50:100,100:180,200:300,500:600,1000:1000,2000:1800,5000:4000,7000:5500,10000:7500,20000:14000,50000:30000},
+ comments:{50:300,100:500,200:900,500:2000,1000:3500,2000:6500,5000:15000,7000:20000,10000:28000,20000:52000,50000:120000},
+ views:{50:80,100:130,200:200,500:400,1000:700,2000:1200,5000:2500,7000:3200,10000:4500,20000:8500,50000:19000},
+ subscribers:{50:300,100:500,200:900,500:2000,1000:3500,2000:6500,5000:14000,7000:18500,10000:26000,20000:48000,50000:110000},
+ shares:{50:120,100:200,200:350,500:700,1000:1200,2000:2100,5000:4800,7000:6300,10000:8800,20000:16500,50000:36000},
+ plays:{50:100,100:180,200:300,500:600,1000:1000,2000:1800,5000:4000,7000:5500,10000:7500,20000:14000,50000:30000}
+};
+const grid=document.getElementById('grid'), sel=document.getElementById('sel'), waBtn=document.getElementById('waBtn');
+function render(){
+ grid.innerHTML='';
+ qtys.forEach(q=>{
+  let price=basePrices[serv][q];
+  if(plat==='youtube' || plat==='spotify' || plat==='boomplay') price=Math.round(price*1.3);
+  if(plat==='facebook' || plat==='instagram') price=Math.round(price*1.1);
+  let lab=q>=1000?(q/1000)+'K':q;
+  let d=document.createElement('div');
+  d.className='card';
+  d.innerHTML=`<div class="qty">${lab}</div><div class="price">KSh ${price.toLocaleString()}</div><div style="font-size:9px;opacity:.5">${plat} ${serv}</div><div class="btns"><a class="c" href="tel:0794147629">📞 CALL</a><a class="w" href="https://wa.me/254794147629?text=Nataka%20${plat}%20${serv}%20${lab}%20KSh%20${price}%20Username:%20">💬 WA</a></div>`;
+  d.onclick=()=>{qty=q; update()};
+  if(q===qty) d.style.border='2px solid #00ff88';
+  grid.appendChild(d);
+ })
+}
+function update(){
+ let price=basePrices[serv][qty];
+ if(plat==='youtube' || plat==='spotify' || plat==='boomplay') price=Math.round(price*1.3);
+ if(plat==='facebook' || plat==='instagram') price=Math.round(price*1.1);
+ let lab=qty>=1000?(qty/1000)+'K':qty;
+ document.getElementById('titlePlat').innerText=plat.toUpperCase();
+ document.getElementById('titleServ').innerText=serv.toUpperCase();
+ sel.innerHTML=`Umechagua: <b style="color:#00ff88">${plat.toUpperCase()} ${serv.toUpperCase()} ${lab}</b> = <b>KSh ${price.toLocaleString()}</b>`;
+ waBtn.href=`https://wa.me/254794147629?text=Habari%20KenyaBoost%20🇰🇪%0APlatform:%20${plat}%0AService:%20${serv}%0AQuantity:%20${lab}%20(${qty})%0APrice:%20KSh%20${price}%0AUsername/Link%20yangu:%20`;
+ render();
+}
+document.querySelectorAll('.p').forEach(p=>{p.onclick=()=>{document.querySelectorAll('.p').forEach(x=>x.classList.remove('active')); p.classList.add('active'); plat=p.dataset.plat; update()}});
+document.querySelectorAll('.s').forEach(s=>{s.onclick=()=>{document.querySelectorAll('.s').forEach(x=>x.classList.remove('active')); s.classList.add('active'); serv=s.dataset.serv; update()}});
+update();
+</script></body></html>
