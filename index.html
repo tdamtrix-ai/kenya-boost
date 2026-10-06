@@ -1,162 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="sw">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KENYABOOST - All Platforms</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TdamTrix - Jeet Hub AUTO</title>
 <style>
-body{margin:0;background:#000;color:#fff;font-family:Arial;text-align:center}
-.header{background:#111;padding:15px;position:sticky;top:0;z-index:99;border-bottom:1px solid #222}
-.logo{color:#00ff88;font-weight:bold;font-size:22px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:15px;max-width:500px;margin:auto}
-.plat{background:#111;border:1px solid #333;border-radius:12px;padding:12px;cursor:pointer;font-size:13px}
-.plat.active{background:#00ff88;color:#000;font-weight:bold;border-color:#00ff88}
-.serv{display:flex;gap:8px;justify-content:center;margin:10px;flex-wrap:wrap}
-.sbtn{background:#222;border:1px solid #444;color:#fff;padding:8px 14px;border-radius:20px;cursor:pointer}
-.sbtn.active{background:#fff;color:#000}
-.pkgs{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:15px;max-width:500px;margin:auto}
-.pkg{background:#111;border:1px solid #333;border-radius:12px;padding:12px;cursor:pointer}
-.pkg.active{border:2px solid #00ff88;background:#0a1a10}
-.price{color:#00ff88;font-weight:bold;font-size:18px}
-.price2{font-size:11px;color:#888}
-.pochi{background:#0f1f0f;border:2px solid #00ff88;border-radius:15px;padding:20px;margin:15px auto;max-width:420px}
-.btn{padding:14px;border:none;border-radius:30px;font-weight:bold;width:48%;cursor:pointer}
-.btn-call{background:#222;color:#fff;border:1px solid #444}
-.btn-wa{background:#00ff88;color:#000}
-.order{position:fixed;bottom:0;left:0;right:0;background:#111;padding:12px;border-top:1px solid #333}
-.order button{width:100%;padding:16px;background:#00ff88;border:none;border-radius:30px;font-weight:bold;font-size:18px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#050510;color:#fff;font-family:Inter,sans-serif}
+.header{background:linear-gradient(90deg,#7c3aed,#ec4899);padding:15px;text-align:center;font-weight:900;font-size:22px}
+.container{max-width:450px;margin:20px auto;padding:15px}
+.card{background:#151530;border:1px solid #7c3aed44;border-radius:20px;padding:20px;box-shadow:0 0 40px #7c3aed22}
+.title{color:#a78bfa;font-size:18px;font-weight:800;text-align:center;margin-bottom:15px}
+label{font-size:12px;color:#aaa;margin-top:10px;display:block}
+input,select{width:100%;padding:14px;margin:6px 0 12px;background:#0a0a25;border:1px solid #333;border-radius:12px;color:#fff;font-size:15px}
+button{width:100%;padding:16px;background:linear-gradient(90deg,#7c3aed,#ec4899);border:none;border-radius:14px;color:#fff;font-weight:900;font-size:17px;cursor:pointer;margin-top:10px}
+button:active{transform:scale(.97)}
+#result{margin-top:15px;padding:12px;border-radius:10px;display:none;text-align:center;font-weight:bold}
+.success{background:#064e3b;color:#6ee7b7;display:block!important}
+.error{background:#7f1d1d;color:#fca5a5;display:block!important}
+.loading{background:#1e1b4b;color:#a5b4fc;display:block!important}
+.price-box{display:flex;justify-content:space-between;background:#0a0a25;padding:10px;border-radius:10px;margin:10px 0;font-size:13px}
+.badge{background:#7c3aed;padding:3px 10px;border-radius:20px;font-size:11px}
 </style>
 </head>
 <body>
-<div class="header">
-<div class="logo">🇰🇪 KENYABOOST</div>
-<div style="font-size:12px;color:#aaa">0794147629 | Pochi La Biashara</div>
-</div>
+<div class="header">TDAMTRIX AUTO SMM 🚀</div>
+<div class="container">
+<div class="card">
+<div class="title">🔥 Jeet Hub Style - Auto Delivery</div>
 
-<h3 style="margin:15px 0 5px">1️⃣ PLATFORM</h3>
-<div class="grid" id="platforms">
-<div class="plat active" onclick="setPlat(this,'TikTok')">TikTok</div>
-<div class="plat" onclick="setPlat(this,'YouTube')">YouTube</div>
-<div class="plat" onclick="setPlat(this,'Instagram')">Instagram</div>
-<div class="plat" onclick="setPlat(this,'Facebook')">Facebook</div>
-<div class="plat" onclick="setPlat(this,'Likee')">Likee</div>
-<div class="plat" onclick="setPlat(this,'Telegram')">Telegram</div>
-<div class="plat" onclick="setPlat(this,'Threads')">Threads</div>
-<div class="plat" onclick="setPlat(this,'Snapchat')">Snapchat</div>
-<div class="plat" onclick="setPlat(this,'Spotify')">Spotify</div>
-<div class="plat" onclick="setPlat(this,'Boomplay')">Boomplay</div>
-<div class="plat" onclick="setPlat(this,'Audiomack')">Audiomack</div>
-<div class="plat" onclick="setPlat(this,'Twitter')">Twitter/X</div>
-</div>
+<div class="price-box"><span>Balance Yako SMMStone:</span><span id="bal" style="color:#6ee7b7">Loading...</span></div>
 
-<h3>2️⃣ SERVICE</h3>
-<div class="serv">
-<div class="sbtn active" onclick="setServ(this,'Followers')">Followers</div>
-<div class="sbtn" onclick="setServ(this,'Likes')">Likes ❤️ CHEAP!</div>
-<div class="sbtn" onclick="setServ(this,'Views')">Views 👁️</div>
-<div class="sbtn" onclick="setServ(this,'Subscribers')">Subs</div>
-</div>
+<label>1. Chagua Service</label>
+<select id="service" onchange="updatePrice()">
+<option value="13241">YouTube Subs [Real] - 1000</option>
+<option value="13242">YouTube Views [Non-Drop]</option>
+<option value="1001">TikTok Followers</option>
+<option value="1002">Instagram Followers</option>
+<option value="1003">Facebook Followers</option>
+<option value="12665">YouTube Subs Cheapest</option>
+</select>
 
-<h3 id="title">TikTok Followers</h3>
-<div class="pkgs" id="pkgs"></div>
+<label>2. Weka Link (YouTube / TikTok / IG)</label>
+<input id="link" placeholder="https://youtube.com/watch?v=...">
 
-<div class="pochi">
-<h3 style="color:#00ff88;margin:0">💰 LIPA NA POCHI</h3>
-<h1 style="margin:8px 0">0794147629</h1>
-<div style="font-size:13px;color:#aaa;background:#000;padding:10px;border-radius:10px;text-align:left">
-M-Pesa > Pochi La Biashara > 0794147629<br>
-Kiasi: <b id="kiasi" style="color:#00ff88">150</b><br>
-Jina: KENYABOOST
+<label>3. Quantity</label>
+<input id="qty" type="number" value="1000" min="100" oninput="updatePrice()">
+
+<div class="price-box"><span>Utakula kwa SMMStone:</span><span id="cost">$0.00</span></div>
+
+<button id="btn" onclick="orderNow()">LIPA NA TUMA AUTO ⚡</button>
+<div id="result"></div>
+
+<p style="font-size:10px;color:#666;text-align:center;margin-top:15px">⚠️ Weka $5 kwenye smmstone.com > Add Funds kwanza, vinginevyo order itafail. API yako iko ndani ya file hii - baadaye badilisha API key kwa usalama.</p>
 </div>
-<p id="uchaguo" style="color:#00ff88;font-weight:bold"></p>
-<div style="display:flex;gap:10px">
-<button class="btn btn-call" onclick="location.href='tel:0794147629'">📞 CALL</button>
-<button class="btn btn-wa" onclick="orderWA()">ORDER WA</button>
-</div>
-</div>
-<div style="height:90px"></div>
-<div class="order">
-<button onclick="paid()">✅ NIMELIPA</button>
 </div>
 
 <script>
-let plat='TikTok'; let serv='Followers'; let qty=50; let price=150;
-let list=[50,100,200,500,1000,2000,3000,5000,10000,20000,40000,50000];
+const API_KEY = "ce404945aeb4f5fac83b0cb20599c549";
+const API_URL = "https://smmstone.com/api/v2";
 
-function priceCalc(q,s){
- if(s=='Likes'){
-   if(q<=50) return 30;
-   if(q<=100) return 50;
-   if(q<=200) return 80;
-   if(q<=500) return 150;
-   if(q<=1000) return 250;
-   if(q<=2000) return 400;
-   if(q<=3000) return 550;
-   if(q<=5000) return 800;
-   if(q<=10000) return 1400;
-   if(q<=20000) return 2500;
-   if(q<=40000) return 4500;
-   return 5500;
- }
- if(s=='Views'){
-   if(q<=50) return 20;
-   if(q<=100) return 30;
-   if(q<=200) return 50;
-   if(q<=500) return 100;
-   if(q<=1000) return 180;
-   if(q<=2000) return 300;
-   if(q<=3000) return 400;
-   if(q<=5000) return 600;
-   if(q<=10000) return 1000;
-   if(q<=20000) return 1800;
-   if(q<=40000) return 3200;
-   return 4000;
- }
- // Followers / Subs - Bei kubwa
- if(q<=50) return 150;
- if(q<=100) return 250;
- if(q<=200) return 400;
- if(q<=500) return 750;
- if(q<=1000) return 1400;
- if(q<=2000) return 2600;
- if(q<=3000) return 3800;
- if(q<=5000) return 6000;
- if(q<=10000) return 11000;
- if(q<=20000) return 20000;
- if(q<=40000) return 38000;
- return 45000;
+async function apiCall(params){
+  let fd = new FormData();
+  for(let k in params) fd.append(k, params[k]);
+  // proxy to bypass CORS
+  let r = await fetch("https://corsproxy.io/?" + encodeURIComponent(API_URL), {method:"POST", body:fd});
+  // fallback if proxy down, try direct
+  if(!r.ok) r = await fetch(API_URL, {method:"POST", body:fd});
+  return r.json();
 }
 
-function render(){
- let html='';
- list.forEach(q=>{
-  let p=priceCalc(q,serv);
-  let active=q==qty?'active':'';
-  let label=q>=1000?(q/1000)+'K':q;
-  let cheap = serv=='Likes' ? '<div class=price2>CHEAP ❤️</div>' : serv=='Views' ? '<div class=price2>SUPER CHEAP 👁️</div>' : '';
-  html+=`<div class="pkg ${active}" onclick="setQty(${q},${p},this)"><b>${label} ${serv}</b>${cheap}<div class="price">KSh ${p}</div></div>`;
- });
- document.getElementById('pkgs').innerHTML=html;
- document.getElementById('title').innerText=plat+' '+serv;
- updateText();
+async function loadBalance(){
+  try{
+    let d = await apiCall({key:API_KEY, action:"balance"});
+    if(d.balance) document.getElementById('bal').innerText = "$" + d.balance;
+    else document.getElementById('bal').innerText = "Weka $5";
+  }catch(e){document.getElementById('bal').innerText = "Check Balance";}
 }
-function setPlat(el,n){plat=n; document.querySelectorAll('.plat').forEach(e=>e.classList.remove('active')); el.classList.add('active'); render();}
-function setServ(el,n){serv=n; qty=50; price=priceCalc(50,serv); document.querySelectorAll('.sbtn').forEach(e=>e.classList.remove('active')); el.classList.add('active'); render();}
-function setQty(q,p,el){qty=q; price=p; document.querySelectorAll('.pkg').forEach(e=>e.classList.remove('active')); el.classList.add('active'); updateText();}
-function updateText(){
- document.getElementById('kiasi').innerText=price;
- document.getElementById('uchaguo').innerText=`Umechagua: ${plat} ${serv} ${qty} = KSh ${price}`;
-}
-function orderWA(){
- let m=`Habari KENYABOOST, nataka ${plat} ${serv} ${qty} = KSh ${price}. Pochi 0794147629`;
- window.open('https://wa.me/254794147629?text='+encodeURIComponent(m),'_blank');
-}
-function paid(){
- let m=`NIMELIPA KSh ${price} Pochi 0794147629 kwa ${plat} ${serv} ${qty}`;
- window.open('https://wa.me/254794147629?text='+encodeURIComponent(m),'_blank');
-}
-render();
-</script>
-</body>
-</html>
+loadBalance();
 
+function updatePrice(){
+  // simple estimate $0.80 per 1000 - badilisha kwa bei yako
+  let q = document.getElementById('qty').value || 1000;
+  document.getElementById('cost').innerText = "$" + (q/1000 * 0.8).toFixed(2);
+}
+
+async function orderNow(){
+  let link = document.getElementById('link').value.trim();
+  let qty = document.getElementById('qty').value.trim();
+  let service = document.getElementById('service').value;
+  let btn = document.getElementById('btn');
+  let resDiv = document.getElementById('result');
+
+  if(!link ||!qty){alert("Weka Link na Quantity!"); return;}
+
+  btn.disabled = true;
+  resDiv.className = "loading";
+  res
