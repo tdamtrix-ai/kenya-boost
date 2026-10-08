@@ -1,99 +1,137 @@
-<!DOCTYPE html>
-<html lang="sw">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TdamTrix - Jeet Hub AUTO</title>
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KENYA BOOST - ALL IN ONE AUTO</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#050510;color:#fff;font-family:Inter,sans-serif}
-.header{background:linear-gradient(90deg,#7c3aed,#ec4899);padding:15px;text-align:center;font-weight:900;font-size:22px}
-.container{max-width:450px;margin:20px auto;padding:15px}
-.card{background:#151530;border:1px solid #7c3aed44;border-radius:20px;padding:20px;box-shadow:0 0 40px #7c3aed22}
-.title{color:#a78bfa;font-size:18px;font-weight:800;text-align:center;margin-bottom:15px}
-label{font-size:12px;color:#aaa;margin-top:10px;display:block}
-input,select{width:100%;padding:14px;margin:6px 0 12px;background:#0a0a25;border:1px solid #333;border-radius:12px;color:#fff;font-size:15px}
-button{width:100%;padding:16px;background:linear-gradient(90deg,#7c3aed,#ec4899);border:none;border-radius:14px;color:#fff;font-weight:900;font-size:17px;cursor:pointer;margin-top:10px}
-button:active{transform:scale(.97)}
-#result{margin-top:15px;padding:12px;border-radius:10px;display:none;text-align:center;font-weight:bold}
-.success{background:#064e3b;color:#6ee7b7;display:block!important}
-.error{background:#7f1d1d;color:#fca5a5;display:block!important}
-.loading{background:#1e1b4b;color:#a5b4fc;display:block!important}
-.price-box{display:flex;justify-content:space-between;background:#0a0a25;padding:10px;border-radius:10px;margin:10px 0;font-size:13px}
-.badge{background:#7c3aed;padding:3px 10px;border-radius:20px;font-size:11px}
-</style>
-</head>
-<body>
-<div class="header">TDAMTRIX AUTO SMM 🚀</div>
-<div class="container">
-<div class="card">
-<div class="title">🔥 Jeet Hub Style - Auto Delivery</div>
+body{background:#0d0d0d;color:#fff;font-family:Arial;padding:10px;padding-bottom:90px}
+.top{background:linear-gradient(135deg,#0a84ff 0%,#000 25%,#1DB954 50%,#ff004e 75%,#000 100%);text-align:center;padding:22px;border-radius:18px;border:2px solid #222}
+.top h1{font-size:33px;font-weight:900;letter-spacing:1px}.top h1 span{color:#ffde00}
+.top p{font-size:10px;opacity:.9;margin-top:6px;line-height:15px}
+.cats{display:flex;gap:7px;margin:14px 0;overflow:auto;padding-bottom:4px}
+.cat{background:#1e1e1e;padding:9px 14px;border-radius:20px;font-weight:800;font-size:11px;border:1px solid #333;white-space:nowrap;cursor:pointer}
+.cat.active{background:#0a84ff;color:#fff;border-color:#0a84ff}
+.cat.music.active{background:#1DB954;color:#000}
+.plat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px}
+.pbtn{background:#1a1a1a;border:1px solid #333;padding:10px 4px;border-radius:12px;text-align:center;font-size:10px;font-weight:800;cursor:pointer}
+.pbtn.active{border-color:#ffde00;background:#222}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.card{background:#181818;border-radius:14px;padding:12px;text-align:center;border:1px solid #2a2a2a;position:relative}
+.card.best{border-color:#ffde00;background:linear-gradient(180deg,#221f00,#181818)}
+.qty{font-size:11px;color:#aaa}.price{font-weight:900;font-size:17px;margin:5px 0}
+.btn{width:100%;padding:9px;border-radius:9px;border:0;font-weight:900;font-size:11px;margin-top:4px;cursor:pointer}
+.btn-blue{background:#0a84ff;color:#fff}.btn-green{background:#1DB954;color:#000}.btn-red{background:#ff004e;color:#fff}
+.tag{font-size:8px;padding:2px 6px;border-radius:6px;font-weight:900;position:absolute;top:6px;right:6px}
+.tag-pop{background:#ffde00;color:#000}.tag-best{background:#0a84ff;color:#fff}
+.bot{position:fixed;bottom:0;left:0;right:0;background:#111;border-top:1px solid #222;display:flex;padding:8px 0}
+.bot div{flex:1;text-align:center;font-size:9px;font-weight:700;color:#777}
+.bot div.active{color:#0a84ff}
+</style></head><body>
 
-<div class="price-box"><span>Balance Yako SMMStone:</span><span id="bal" style="color:#6ee7b7">Loading...</span></div>
-
-<label>1. Chagua Service</label>
-<select id="service" onchange="updatePrice()">
-<option value="13241">YouTube Subs [Real] - 1000</option>
-<option value="13242">YouTube Views [Non-Drop]</option>
-<option value="1001">TikTok Followers</option>
-<option value="1002">Instagram Followers</option>
-<option value="1003">Facebook Followers</option>
-<option value="12665">YouTube Subs Cheapest</option>
-</select>
-
-<label>2. Weka Link (YouTube / TikTok / IG)</label>
-<input id="link" placeholder="https://youtube.com/watch?v=...">
-
-<label>3. Quantity</label>
-<input id="qty" type="number" value="1000" min="100" oninput="updatePrice()">
-
-<div class="price-box"><span>Utakula kwa SMMStone:</span><span id="cost">$0.00</span></div>
-
-<button id="btn" onclick="orderNow()">LIPA NA TUMA AUTO ⚡</button>
-<div id="result"></div>
-
-<p style="font-size:10px;color:#666;text-align:center;margin-top:15px">⚠️ Weka $5 kwenye smmstone.com > Add Funds kwanza, vinginevyo order itafail. API yako iko ndani ya file hii - baadaye badilisha API key kwa usalama.</p>
+<div class="top">
+<h1>KENYA <span>BOOST</span> AUTO</h1>
+<p>🚀 TikTok • FB • YouTube • Telegram • IG • X • Spotify • Boomplay • Audiomack<br>AUTO DELIVERY • LIPA NA M-PESA • 0-5MIN START</p>
 </div>
+
+<div class="cats">
+<div class="cat active" onclick="filterCat(this,'all')">ALL 🔥</div>
+<div class="cat" onclick="filterCat(this,'social')">SOCIAL 📱</div>
+<div class="cat music" onclick="filterCat(this,'music')">MUSIC 🎵</div>
+<div class="cat" onclick="filterCat(this,'video')">VIDEO ▶️</div>
+</div>
+
+<div class="plat-row">
+<div class="pbtn active">📱 TikTok</div>
+<div class="pbtn">📘 Facebook</div>
+<div class="pbtn">📸 Instagram</div>
+<div class="pbtn">🐦 Twitter/X</div>
+<div class="pbtn">▶️ YouTube</div>
+<div class="pbtn">✈️ Telegram</div>
+<div class="pbtn">🎧 Spotify</div>
+<div class="pbtn">💥 Boomplay</div>
+<div class="pbtn">🔥 Audiomack</div>
+</div>
+
+<div class="grid" id="grid"></div>
+
+<div class="bot">
+<div class="active">🚀<br>Services</div>
+<div>📋<br>Orders</div>
+<div>💰<br>Wallet</div>
+<div>👤<br>Profile</div>
 </div>
 
 <script>
-const API_KEY = "ce404945aeb4f5fac83b0cb20599c549";
-const API_URL = "https://smmstone.com/api/v2";
+const items=[
+{plat:'TIKTOK',type:'social',name:'50 Followers',price:79},
+{plat:'TIKTOK',type:'social',name:'200 Followers',price:199},
+{plat:'TIKTOK',type:'social',name:'500 Followers',price:399,best:true},
+{plat:'TIKTOK',type:'social',name:'1K Followers',price:699,pop:true},
+{plat:'TIKTOK',type:'social',name:'2K Followers',price:1299},
+{plat:'TIKTOK',type:'social',name:'5K Followers',price:2999},
+{plat:'TIKTOK',type:'social',name:'10K Followers',price:5500},
+{plat:'TIKTOK',type:'social',name:'20K Followers',price:9999},
+{plat:'TIKTOK',type:'social',name:'25K Followers',price:12200},
+{plat:'TIKTOK',type:'social',name:'30K Followers',price:14500},
+{plat:'TIKTOK',type:'social',name:'50K Followers',price:22500},
 
-async function apiCall(params){
-  let fd = new FormData();
-  for(let k in params) fd.append(k, params[k]);
-  // proxy to bypass CORS
-  let r = await fetch("https://corsproxy.io/?" + encodeURIComponent(API_URL), {method:"POST", body:fd});
-  // fallback if proxy down, try direct
-  if(!r.ok) r = await fetch(API_URL, {method:"POST", body:fd});
-  return r.json();
+{plat:'IG',type:'social',name:'50 Likes',price:49},
+{plat:'IG',type:'social',name:'200 Likes',price:99},
+{plat:'IG',type:'social',name:'500 Likes',price:189},
+{plat:'IG',type:'social',name:'1K Likes',price:299,pop:true},
+{plat:'IG',type:'social',name:'5K Likes',price:1299},
+{plat:'IG',type:'social',name:'10K Likes',price:2400},
+{plat:'IG',type:'social',name:'50K Likes',price:10500},
+
+{plat:'FB',type:'social',name:'50 Likes',price:59},
+{plat:'FB',type:'social',name:'500 Likes',price:299},
+{plat:'FB',type:'social',name:'1K Likes',price:499,best:true},
+{plat:'FB',type:'social',name:'50K Likes',price:11500},
+
+{plat:'YOUTUBE',type:'video',name:'50 Subs',price:99},
+{plat:'YOUTUBE',type:'video',name:'500 Subs',price:599},
+{plat:'YOUTUBE',type:'video',name:'1K Subs',price:999,pop:true},
+{plat:'YOUTUBE',type:'video',name:'50K Subs',price:32000},
+
+{plat:'SPOTIFY',type:'music',name:'50 Plays',price:99},
+{plat:'SPOTIFY',type:'music',name:'200 Plays',price:199},
+{plat:'SPOTIFY',type:'music',name:'500 Plays',price:399},
+{plat:'SPOTIFY',type:'music',name:'1K Plays',price:699,best:true},
+{plat:'SPOTIFY',type:'music',name:'5K Plays',price:2999},
+{plat:'SPOTIFY',type:'music',name:'10K Plays',price:5500},
+{plat:'SPOTIFY',type:'music',name:'50K Plays',price:23000,pop:true},
+
+{plat:'BOOMPLAY',type:'music',name:'500 Plays',price:350},
+{plat:'BOOMPLAY',type:'music',name:'1K Plays',price:600,best:true},
+{plat:'BOOMPLAY',type:'music',name:'50K Plays',price:18500},
+
+{plat:'AUDIOMACK',type:'music',name:'500 Plays',price:300},
+{plat:'AUDIOMACK',type:'music',name:'1K Plays',price:550,pop:true},
+{plat:'AUDIOMACK',type:'music',name:'50K Plays',price:17000},
+
+{plat:'TELEGRAM',type:'social',name:'50 Members',price:89},
+{plat:'TELEGRAM',type:'social',name:'1K Members',price:799,best:true},
+{plat:'TELEGRAM',type:'social',name:'50K Members',price:25000},
+];
+
+function render(filter='all'){
+let html='';
+items.filter(i=>filter=='all'||i.type==filter).forEach(it=>{
+let cls=it.best?' best':'';
+let tag=it.pop?'<span class="tag tag-pop">POPULAR</span>':it.best?'<span class="tag tag-best">BEST</span>':'';
+let btnCls=it.type=='music'?'btn-green':it.type=='video'?'btn-red':'btn-blue';
+html+=`<div class="card${cls}">${tag}<div style="font-size:9px;color:#0a84ff;font-weight:900">${it.plat}</div><div class="qty">${it.name}</div><div class="price">${it.price} KSH</div><button class="btn ${btnCls}" onclick="buy('${it.plat} - ${it.name}',${it.price})">BUY BOOST ⚡</button></div>`;
+});
+document.getElementById('grid').innerHTML=html;
 }
-
-async function loadBalance(){
-  try{
-    let d = await apiCall({key:API_KEY, action:"balance"});
-    if(d.balance) document.getElementById('bal').innerText = "$" + d.balance;
-    else document.getElementById('bal').innerText = "Weka $5";
-  }catch(e){document.getElementById('bal').innerText = "Check Balance";}
+function filterCat(el,f){
+document.querySelectorAll('.cat').forEach(c=>c.classList.remove('active'));
+el.classList.add('active'); render(f);
 }
-loadBalance();
-
-function updatePrice(){
-  // simple estimate $0.80 per 1000 - badilisha kwa bei yako
-  let q = document.getElementById('qty').value || 1000;
-  document.getElementById('cost').innerText = "$" + (q/1000 * 0.8).toFixed(2);
+function buy(n,p){
+let link=prompt(n+'\n'+p+' KSH\n\nWeka Link yako:');
+if(!link) return;
+let phone=prompt('Weka M-PESA Number:');
+if(phone){alert('✅ STK Push kwa '+phone+'\n'+n+' - '+p+' KSH\nLink: '+link+'\n\nM-PESA ukilipa, AUTO DELIVERY 0-5min! 🇰🇪\n\nSMMStone API itatuma auto.');}
 }
-
-async function orderNow(){
-  let link = document.getElementById('link').value.trim();
-  let qty = document.getElementById('qty').value.trim();
-  let service = document.getElementById('service').value;
-  let btn = document.getElementById('btn');
-  let resDiv = document.getElementById('result');
-
-  if(!link ||!qty){alert("Weka Link na Quantity!"); return;}
-
-  btn.disabled = true;
-  resDiv.className = "loading";
-  res
+render();
+</script>
+</body></html>
