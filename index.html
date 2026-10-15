@@ -1,98 +1,134 @@
 <!DOCTYPE html>
-<html>
+<html lang="sw">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KENYA BOOST AUTO</title>
 <style>
-body{background:#0f0f0f;color:white;font-family:Arial;margin:0;padding:10px}
-.header{background:linear-gradient(90deg,#0066ff,#00cc99,#ff0044);padding:20px;border-radius:20px;text-align:center;font-weight:bold;font-size:22px}
-.filters{display:flex;gap:8px;overflow-x:auto;margin:15px 0}
-.filters button{padding:8px 16px;border-radius:20px;border:1px solid #333;background:#1a1a1a;color:white;white-space:nowrap}
+*{box-sizing:border-box}
+body{margin:0;padding:10px;background:#0a0a0a;color:#fff;font-family:Arial}
+.header{background:linear-gradient(90deg,#0066ff,#00cc99,#ff0055);padding:18px;border-radius:20px;text-align:center;font-weight:900;font-size:20px}
+.header small{font-size:10px;font-weight:400}
+.filters{display:flex;gap:6px;overflow:auto;margin:12px 0;padding-bottom:5px}
+.filters button{padding:8px 14px;border-radius:20px;border:1px solid #333;background:#1e1e1e;color:#fff;white-space:nowrap;font-size:12px}
 .filters button.active{background:#0088ff;border-color:#0088ff}
-.services-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.card{background:#1a1a1a;border:1px solid #333;border-radius:16px;padding:12px;text-align:center}
-.card.best{border-color:#ffcc00}
-.card input{width:90%;margin:8px 0;padding:8px;border-radius:8px;border:1px solid #444;background:#222;color:white;text-align:center}
-.price{font-size:20px;font-weight:bold;margin:5px 0}
-.buy{width:100%;background:#0088ff;color:white;border:none;padding:10px;border-radius:10px;font-weight:bold}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.card{border-radius:16px;padding:12px;text-align:center;position:relative}
+.card .label{font-size:10px;font-weight:bold;opacity:0.9}
+.card .qty{font-size:11px;margin:2px 0}
+.card .price{font-size:18px;font-weight:900;margin:4px 0}
+.card input{width:95%;padding:7px;border-radius:8px;border:1px solid rgba(255,255,255,0.3);background:rgba(0,0,0,0.4);color:#fff;text-align:center;margin:6px 0;font-size:12px}
+.card .buy{width:100%;background:#000;color:#fff;border:none;padding:8px;border-radius:10px;font-weight:bold;font-size:12px}
+.c-tiktok{background:#000;border:2px solid #00f2ea}
+.c-fb{background:#1877F2}
+.c-ig{background:linear-gradient(135deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5)}
+.c-yt{background:#FF0000}
+.c-x{background:#000;border:1px solid #666}
+.c-telegram{background:#2AABEE}
+.c-spotify{background:#1DB954}
+.c-boomplay{background:#0087FF}
+.c-audio{background:#FF8C00}
+.c-threads{background:#000;border:1px solid #fff}
+.c-comments{background:linear-gradient(135deg,#6c5ce7,#a29bfe)}
+.c-watch{background:linear-gradient(135deg,#e17055,#fab1a0)}
+.contact{margin:20px 0;background:#111;border:1px solid #333;border-radius:15px;padding:12px}
+.contact a{color:#25D366;text-decoration:none}
+.contact .row{margin:6px 0;padding:8px;background:#1e1e1e;border-radius:8px;font-size:13px}
 </style>
 </head>
 <body>
 
-<div class="header">KENYA BOOST AUTO<br><small style="font-size:10px">TikTok • FB • YouTube • Telegram • IG • X • Spotify • Boomplay • Audiomack<br>AUTO DELIVERY • LIPA NA M-PESA • 0-5MIN START</small></div>
+<div class="header">KENYA BOOST AUTO<br><small>TikTok • FB • YouTube • Telegram • IG • X • Spotify • Boomplay • Audiomack<br>AUTO DELIVERY • LIPA NA M-PESA • 0-5MIN START</small></div>
 
 <div class="filters">
-<button class="active">ALL 🔥</button>
-<button>SOCIAL 📱</button>
-<button>MUSIC 🎵</button>
-<button>VIDEO ▶️</button>
+<button class="active">ALL 🔥</button><button>SOCIAL 📱</button><button>MUSIC 🎵</button><button>VIDEO ▶️</button><button>COMMENTS 💬</button><button>WATCHTIME ⏱️</button>
 </div>
 
 <div class="filters">
-<button class="active">📱 TikTok</button>
-<button>📘 Facebook</button>
-<button>📸 Instagram</button>
-<button>🐦 Twitter/X</button>
-<button>▶️ YouTube</button>
-<button>✈️ Telegram</button>
-<button>🎵 Spotify</button>
-<button>💥 Boomplay</button>
-<button>🔥 Audiomack</button>
+<button class="active">📱 TikTok</button><button>📘 Facebook</button><button>📸 Instagram</button><button>🐦 Twitter/X</button><button>▶️ YouTube</button><button>✈️ Telegram</button><button>🎵 Spotify</button><button>💥 Boomplay</button><button>🔥 Audiomack</button><button>🧵 Threads</button>
 </div>
 
-<div class="services-grid" id="grid"></div>
+<div class="grid" id="services"></div>
+
+<div class="contact">
+<div class="row">📞 <b>Call:</b> <a href="tel:0794147629">0794147629</a></div>
+<div class="row">🟢 <b>WhatsApp:</b> <a href="https://wa.me/254180653168">+254 180 653168</a></div>
+<div class="row">💰 <b>Pochi la Biashara:</b> <span style="color:#ffcc00;font-weight:bold">0794147629</span> - Lipa na Pochi</div>
+<div class="row" style="font-size:11px;color:#aaa">Mtu akitaka 67 likes, 27 followers, 438 comments, 100k watch hours - aandike tu idadi na bei itajihesabu auto!</div>
+</div>
 
 <script>
-// ===== BEI ZAKO ULIOTAKA =====
-const rates = {
-  'tiktok_followers': 1.58, // 50=79 => 1.58
-  'fb_likes': 0.10, // 100=10
-  'ig_likes': 0.10,
-  'followers_all': 0.20, // 100=20
-  'yt_subs_small': 1.6, // 50=80
-  'yt_subs_big': 4.0, // 500=2000, 1k=3999
-  'comments': 5,
-  'watchtime': 2.2 // 1k hours=2200
-};
+const allServices = [
+  // LIKES FB IG - 100=10, 200=20, 300=30, 500=50, 1K=100 hadi 100K
+  {t:'FB LIKES', q:100, p:10, c:'c-fb', rate:0.10},
+  {t:'FB LIKES', q:200, p:20, c:'c-fb', rate:0.10},
+  {t:'FB LIKES', q:300, p:30, c:'c-fb', rate:0.10},
+  {t:'FB LIKES', q:500, p:50, c:'c-fb', rate:0.10},
+  {t:'FB LIKES', q:1000, p:100, c:'c-fb', rate:0.10},
+  {t:'FB LIKES', q:5000, p:500, c:'c-fb', rate:0.10},
+  {t:'IG LIKES', q:100, p:10, c:'c-ig', rate:0.10},
+  {t:'IG LIKES', q:200, p:20, c:'c-ig', rate:0.10},
+  {t:'IG LIKES', q:1000, p:100, c:'c-ig', rate:0.10},
+  {t:'TIKTOK LIKES', q:100, p:10, c:'c-tiktok', rate:0.10},
+  // FOLLOWERS - 100=20, 200=40, 500=100, 1K=200
+  {t:'FB FOLLOWERS', q:100, p:20, c:'c-fb', rate:0.20},
+  {t:'FB FOLLOWERS', q:200, p:40, c:'c-fb', rate:0.20},
+  {t:'FB FOLLOWERS', q:500, p:100, c:'c-fb', rate:0.20},
+  {t:'FB FOLLOWERS', q:1000, p:200, c:'c-fb', rate:0.20},
+  {t:'IG FOLLOWERS', q:100, p:20, c:'c-ig', rate:0.20},
+  {t:'IG FOLLOWERS', q:1000, p:200, c:'c-ig', rate:0.20},
+  {t:'TIKTOK FOLLOWERS', q:50, p:79, c:'c-tiktok', rate:1.58},
+  {t:'TIKTOK FOLLOWERS', q:200, p:199, c:'c-tiktok', rate:1.58},
+  {t:'TIKTOK FOLLOWERS', q:500, p:399, c:'c-tiktok', rate:1.58},
+  {t:'TIKTOK FOLLOWERS', q:1000, p:699, c:'c-tiktok', rate:1.58},
+  // YOUTUBE - 50=80, 100=160, 500=2000, 1K=3999
+  {t:'YOUTUBE SUBS', q:50, p:80, c:'c-yt', rate:1.6},
+  {t:'YOUTUBE SUBS', q:100, p:160, c:'c-yt', rate:1.6},
+  {t:'YOUTUBE SUBS', q:500, p:2000, c:'c-yt', rate:4.0},
+  {t:'YOUTUBE SUBS', q:1000, p:3999, c:'c-yt', rate:4.0},
+  {t:'YOUTUBE LIKES', q:100, p:10, c:'c-yt', rate:0.10},
+  // TELEGRAM, THREADS, SPOTIFY, BOOMPLAY, AUDIOMACK
+  {t:'TELEGRAM', q:100, p:30, c:'c-telegram', rate:0.30},
+  {t:'TELEGRAM', q:1000, p:250, c:'c-telegram', rate:0.25},
+  {t:'THREADS', q:100, p:20, c:'c-threads', rate:0.20},
+  {t:'SPOTIFY', q:100, p:20, c:'c-spotify', rate:0.20},
+  {t:'BOOMPLAY', q:100, p:20, c:'c-boomplay', rate:0.20},
+  {t:'AUDIOMACK', q:100, p:20, c:'c-audio', rate:0.20},
+  // COMMENTS - IG, YOUTUBE, FB AND ALL
+  {t:'IG COMMENTS', q:10, p:50, c:'c-comments', rate:5},
+  {t:'IG COMMENTS', q:50, p:200, c:'c-comments', rate:4},
+  {t:'YT COMMENTS', q:10, p:50, c:'c-comments', rate:5},
+  {t:'FB COMMENTS', q:10, p:50, c:'c-comments', rate:5},
+  // WATCH TIME - YOUTUBE, TIKTOK AND ALL
+  {t:'YT WATCHTIME', q:100, p:300, c:'c-watch', rate:3},
+  {t:'YT WATCHTIME', q:1000, p:2200, c:'c-watch', rate:2.2},
+  {t:'YT WATCHTIME', q:4000, p:7999, c:'c-watch', rate:2.0},
+  {t:'TIKTOK WATCH', q:100, p:100, c:'c-watch', rate:1},
+];
 
-function createCard(title, baseQty, basePrice, type){
-  const rate = type==='likes'?0.10 : type==='followers'?0.20 : type==='yt'?1.6 : 1.58;
-  return `
-  <div class="card">
-    <div style="color:#0088ff;font-size:11px">${title}</div>
-    <div style="font-size:12px">${baseQty} Followers</div>
-    <div class="price" id="price-${title}">${basePrice} KSH</div>
-    <input type="number" placeholder="Weka idadi: 67" oninput="calc(this, '${title}', ${rate})" min="1">
-    <div style="font-size:10px;color:#aaa">Ex: 27, 67, 438, 100000</div>
-    <button class="buy" onclick="alert('Order: '+document.getElementById('input-${title}').value)">BUY BOOST ⚡</button>
+let html='';
+allServices.forEach((s,i)=>{
+  html+=`<div class="card ${s.c}">
+    <div class="label">${s.t}</div>
+    <div class="qty">${s.q} ${s.t.includes('LIKES')?'Likes':s.t.includes('WATCH')?'Hours':s.t.includes('COMMENTS')?'Comments':'Followers'}</div>
+    <div class="price" id="p${i}">${s.p} KSH</div>
+    <input type="number" id="input${i}" placeholder="Weka idadi: 67" oninput="auto(${i},${s.rate})">
+    <div style="font-size:9px">Ex: 27, 67, 438, 100000</div>
+    <button class="buy">BUY BOOST ⚡</button>
   </div>`;
-}
+});
+document.getElementById('services').innerHTML=html;
 
-function calc(input, title, rate){
-  let qty = parseInt(input.value);
-  if(!qty || qty<1) return;
-  let price = Math.ceil(qty * rate);
-  // minimums kama ulivyotaka
+function auto(i,rate){
+  let el=document.getElementById('input'+i);
+  let qty=parseInt(el.value);
+  if(!qty||qty<1) return;
+  let price=Math.ceil(qty*rate);
   if(rate==0.10 && price<10) price=10;
   if(rate==0.20 && price<20) price=20;
   if(rate==1.6 && price<80) price=80;
-  document.getElementById('price-'+title).innerText = price + ' KSH ( ~'+qty+' )';
+  document.getElementById('p'+i).innerText=price+' KSH ('+qty+')';
 }
-
-// Tengeneza cards zote
-let html = '';
-html+=createCard('TIKTOK', '50', '79', 'followers');
-html+=createCard('TIKTOK', '200', '199', 'followers');
-html+=createCard('TIKTOK', '500', '399', 'followers');
-html+=createCard('TIKTOK', '1K', '699', 'followers');
-html+=createCard('TIKTOK', '2K', '1299', 'followers');
-html+=createCard('TIKTOK', '5K', '2999', 'followers');
-// Ongeza FB, IG, YT, etc vivyo hivyo
-html+=createCard('FB LIKES', '100', '10', 'likes');
-html+=createCard('IG LIKES', '100', '10', 'likes');
-html+=createCard('YOUTUBE', '50 Subs', '80', 'yt');
-html+=createCard('TELEGRAM', '100', '30', 'followers');
-
-document.getElementById('grid').innerHTML = html;
 </script>
 </body>
 </html>
