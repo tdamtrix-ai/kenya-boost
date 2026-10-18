@@ -6,121 +6,120 @@
 <style>
 body{margin:0;background:#0e0e0e;color:#fff;font-family:Arial;padding-bottom:80px}
 .header{background:linear-gradient(135deg,#0040ff,#00aa44 50%,#ff0033);border-radius:20px;margin:12px;padding:25px 15px;text-align:center}
-.header h1{margin:0;font-size:30px;font-weight:900} .header h1 b{color:#ffdd00}
+.header h1{margin:0;font-size:28px;font-weight:900} .header h1 b{color:#ffdd00}
 .tabs{display:flex;gap:8px;padding:10px 12px;overflow-x:auto;position:sticky;top:0;background:#0e0e0e;z-index:9}
-.tab{padding:10px 18px;border-radius:25px;border:0;font-weight:bold;font-size:12px;cursor:pointer;white-space:nowrap}
+.tab{padding:10px 18px;border-radius:25px;border:0;font-weight:bold;font-size:12px;cursor:pointer}
 .tab.all{background:#0088ff;color:#fff} .tab.social{background:#1877F2;color:#fff} .tab.music{background:#a100f2;color:#fff} .tab.video{background:#ff0000;color:#fff} .tab.other{background:#ff8800;color:#fff}
 .tab.active{transform:scale(1.1);box-shadow:0 0 12px currentColor}
 .platforms{display:flex;flex-wrap:wrap;gap:8px;padding:5px 12px}
 .plat{padding:8px 12px;border-radius:20px;background:#1a1a1a;border:1px solid #333;font-size:11px;font-weight:bold;cursor:pointer}
-.plat.active{border-width:2px}
-.plat[data-p="fb"].active{border-color:#1877F2;color:#1877F2}
-.plat[data-p="ig"].active{border-color:#ff006a;color:#ff006a}
-.plat[data-p="tt"].active{border-color:#00f2ea;color:#00f2ea}
-.plat[data-p="yt"].active{border-color:#ff0000;color:#ff0000}
-.plat[data-p="tg"].active{border-color:#26a5e4;color:#26a5e4}
-.plat[data-p="threads"].active{border-color:#fff;color:#fff}
-.plat[data-p="spotify"].active{border-color:#1DB954;color:#1DB954}
-.plat[data-p="boomplay"].active{border-color:#ff0055;color:#ff0055}
-.plat[data-p="audiomack"].active{border-color:#ff8c00;color:#ff8c00}
+.plat.active{border-width:2px;color:#fff}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px}
-.card{border-radius:16px;padding:12px;text-align:center;border:1px solid #222;position:relative}
-.card.fb{border-color:#1877F2} .card.ig{border-color:#ff006a} .card.tt{border-color:#00f2ea} .card.yt{border-color:#ff0000} .card.tg{border-color:#26a5e4} .card.threads{border-color:#888} .card.spotify{border-color:#1DB954} .card.boomplay{border-color:#ff0055} .card.audiomack{border-color:#ff8c00}
-.card small{font-weight:bold;font-size:11px}
+.card{border-radius:16px;padding:12px;text-align:center;border:1px solid #222}
+.card.fb{border-color:#1877F2} .card.ig{border-color:#ff006a} .card.tt{border-color:#00f2ea} .card.yt{border-color:#ff0000} .card.tg{border-color:#26a5e4} .card.spotify{border-color:#1DB954} .card.boomplay{border-color:#ff0055} .card.audiomack{border-color:#ff8c00} .card.threads{border-color:#fff}
 .card h3{margin:8px 0;font-size:20px}
 .btn{width:100%;background:#0088ff;color:#fff;border:0;padding:10px;border-radius:20px;font-weight:bold;margin-top:8px;cursor:pointer}
-.btn.fb{background:#1877F2} .btn.ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)} .btn.yt{background:#ff0000} .btn.tg{background:#26a5e4} .btn.spotify{background:#1DB954} .btn.boomplay{background:#ff0055} .btn.audiomack{background:#ff8c00}
 .bottom{position:fixed;bottom:0;left:0;right:0;background:#111;display:flex;justify-content:space-around;padding:10px 0;border-top:1px solid #222}
 .bottom a{color:#666;text-decoration:none;font-size:11px;text-align:center} .bottom a.active{color:#0088ff}
+/* MODAL YA LINK */
+#modal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.9);z-index:999;align-items:center;justify-content:center;padding:20px}
+#modal.show{display:flex}
+.box{background:#1a1a1a;border-radius:20px;padding:20px;width:100%;max-width:350px;border:2px solid #0088ff}
+.box h3{margin:0 0 10px} .box input{width:100%;padding:12px;border-radius:12px;border:1px solid #333;background:#000;color:#fff;margin:10px 0;box-sizing:border-box}
+.box button{width:100%;padding:12px;border-radius:12px;border:0;font-weight:bold;margin-top:8px;cursor:pointer}
+.btn-pay{background:#00aa44;color:#fff} .btn-cancel{background:#333;color:#fff}
 </style>
 </head>
 <body>
 <div class="header">
 <h1>KENYA <b>BOOST</b> AUTO</h1>
-<p>🚀 AUTO DELIVERY • LIPA NA M-PESA 0794147629 • 0-5MIN START</p>
+<p>🚀 LIPA NA M-PESA POCHI: 0794147629 • AUTO 0-5MIN</p>
 </div>
 <div class="tabs">
 <button class="tab all active" onclick="filterCat('all',this)">ALL 🔥</button>
 <button class="tab social" onclick="filterCat('social',this)">SOCIAL 📱</button>
 <button class="tab music" onclick="filterCat('music',this)">MUSIC 🎵</button>
 <button class="tab video" onclick="filterCat('video',this)">VIDEO ▶️</button>
-<button class="tab other" onclick="filterCat('other',this)">OTHER 💬</button>
+<button class="tab other" onclick="filterCat('other',this)">COMMENTS 💬</button>
 </div>
 <div class="platforms">
-<button class="plat active" data-p="all" onclick="filterPlat('all',this)">🔥 All</button>
-<button class="plat" data-p="tt" onclick="filterPlat('tt',this)">🎵 TikTok</button>
-<button class="plat" data-p="fb" onclick="filterPlat('fb',this)">📘 Facebook</button>
-<button class="plat" data-p="ig" onclick="filterPlat('ig',this)">📸 Instagram</button>
-<button class="plat" data-p="yt" onclick="filterPlat('yt',this)">▶️ YouTube</button>
-<button class="plat" data-p="tg" onclick="filterPlat('tg',this)">✈️ Telegram</button>
-<button class="plat" data-p="threads" onclick="filterPlat('threads',this)">🧵 Threads</button>
-<button class="plat" data-p="spotify" onclick="filterPlat('spotify',this)">🎧 Spotify</button>
-<button class="plat" data-p="boomplay" onclick="filterPlat('boomplay',this)">💥 Boomplay</button>
-<button class="plat" data-p="audiomack" onclick="filterPlat('audiomack',this)">🔥 Audiomack</button>
+<button class="plat active" onclick="filterPlat('all',this)">🔥 All</button>
+<button class="plat" onclick="filterPlat('tt',this)">TikTok</button>
+<button class="plat" onclick="filterPlat('fb',this)">Facebook</button>
+<button class="plat" onclick="filterPlat('ig',this)">Instagram</button>
+<button class="plat" onclick="filterPlat('yt',this)">YouTube</button>
+<button class="plat" onclick="filterPlat('tg',this)">Telegram</button>
+<button class="plat" onclick="filterPlat('threads',this)">Threads</button>
+<button class="plat" onclick="filterPlat('spotify',this)">Spotify</button>
+<button class="plat" onclick="filterPlat('boomplay',this)">Boomplay</button>
+<button class="plat" onclick="filterPlat('audiomack',this)">Audiomack</button>
 </div>
 <div class="grid" id="grid"></div>
+
+<!-- MODAL YA KUWEKA LINK -->
+<div id="modal">
+<div class="box">
+<h3 id="mTitle">Weka Link Yako</h3>
+<p id="mPrice" style="color:#ffcc00;font-weight:bold"></p>
+<label style="font-size:12px">LINK YAKO (Instagram/TikTok/YouTube/FB):</label>
+<input id="linkInput" type="text" placeholder="https://instagram.com/jina lako...">
+<label style="font-size:12px">Namba yako ya WhatsApp:</label>
+<input id="phoneInput" type="text" placeholder="07xx...">
+<button class="btn-pay" onclick="confirmBuy()">LIPA KWA POCHI 0794147629 ⚡</button>
+<button class="btn-cancel" onclick="closeModal()">GHAIRI</button>
+<p style="font-size:10px;color:#888;text-align:center;margin-top:10px">Baada ya kulipa, tutakujulisha WhatsApp 0-5 min</p>
+</div>
+</div>
+
 <div class="bottom">
 <a href="index.html" class="active">🚀<br>Services</a>
 <a href="orders.html">📋<br>Orders</a>
 <a href="wallet.html">💰<br>Wallet</a>
 <a href="profile.html">👤<br>Profile</a>
 </div>
+
 <script>
-const services=[];
-function addService(platform,cat,metric,tiers,css){
- tiers.forEach(t=>services.push({platform,cat,metric,amount:t.a,price:t.p,css, label:`${t.a>=1000?(t.a/1000)+'K':t.a} ${metric}`}));
+const services=[]; let curItem=null;
+function add(platform,cat,metric,tiers,css){
+ tiers.forEach(t=>services.push({platform,cat,metric,amount:t.a,price:t.p,css,label:`${t.a>=1000?(t.a/1000)+'K':t.a} ${metric}`}));
 }
-// PRICING YAKO
-// Likes FB/IG: 100=10,200=20,300=30,500=50,1k=100 -> 100k=10k
 const likes=[{a:100,p:10},{a:200,p:20},{a:300,p:30},{a:500,p:50},{a:1000,p:100},{a:2000,p:200},{a:5000,p:500},{a:10000,p:1000},{a:20000,p:2000},{a:50000,p:5000},{a:100000,p:10000}];
-// Followers: 100=20,200=40,500=100,1k=200 -> 100k=20k
-const follows=[{a:100,p:20},{a:200,p:40},{a:500,p:100},{a:1000,p:200},{a:2000,p:400},{a:5000,p:1000},{a:10000,p:2000},{a:20000,p:4000},{a:50000,p:10000},{a:100000,p:20000}];
-// YouTube Subs: 50=80,100=160,500=2000,1k=3999
-const ytSubs=[{a:50,p:80},{a:100,p:160},{a:200,p:320},{a:500,p:2000},{a:1000,p:3999},{a:2000,p:7999},{a:5000,p:15000},{a:10000,p:28000}];
-const ytViews=[{a:1000,p:150},{a:5000,p:600},{a:10000,p:1000},{a:50000,p:4500},{a:100000,p:8000}];
-const watchTime=[{a:1000,p:800},{a:4000,p:3000}]; // hours
+const follows=[{a:100,p:20},{a:200,p:40},{a:500,p:100},{a:1000,p:200},{a:2000,p:400},{a:5000,p:1000},{a:10000,p:2000},{a:50000,p:10000},{a:100000,p:20000}];
+const ytSubs=[{a:50,p:80},{a:100,p:160},{a:500,p:2000},{a:1000,p:3999},{a:2000,p:7999},{a:5000,p:15000}];
+const views=[{a:1000,p:150},{a:5000,p:600},{a:10000,p:1000},{a:50000,p:4500},{a:100000,p:8000}];
 const comments=[{a:10,p:100},{a:50,p:450},{a:100,p:800},{a:500,p:3500}];
+const watch=[{a:1000,p:800},{a:4000,p:3000}];
 
-addService('fb','social','Followers',follows,'fb');
-addService('fb','social','Likes',likes,'fb');
-addService('fb','other','Comments',comments,'fb');
-addService('ig','social','Followers',follows,'ig');
-addService('ig','social','Likes',likes,'ig');
-addService('ig','other','Comments',comments,'ig');
-addService('tt','social','Followers',follows,'tt');
-addService('tt','social','Likes',likes,'tt');
-addService('tt','video','Views',ytViews,'tt');
-addService('tt','video','Watch Time',watchTime,'tt');
-addService('tt','other','Comments',comments,'tt');
-addService('yt','video','Subscribers',ytSubs,'yt');
-addService('yt','video','Views',ytViews,'yt');
-addService('yt','video','Watch Time',watchTime,'yt');
-addService('yt','other','Comments',comments,'yt');
-addService('tg','social','Members',follows,'tg');
-addService('tg','social','Views',ytViews,'tg');
-addService('threads','social','Followers',follows,'threads');
-addService('threads','social','Likes',likes,'threads');
-addService('spotify','music','Followers',follows,'spotify');
-addService('spotify','music','Plays',ytViews,'spotify');
-addService('boomplay','music','Followers',follows,'boomplay');
-addService('boomplay','music','Plays',ytViews,'boomplay');
-addService('audiomack','music','Followers',follows,'audiomack');
-addService('audiomack','music','Plays',ytViews,'audiomack');
+add('fb','social','Followers',follows,'fb'); add('fb','social','Likes',likes,'fb'); add('fb','other','Comments',comments,'fb');
+add('ig','social','Followers',follows,'ig'); add('ig','social','Likes',likes,'ig'); add('ig','other','Comments',comments,'ig');
+add('tt','social','Followers',follows,'tt'); add('tt','social','Likes',likes,'tt'); add('tt','video','Views',views,'tt'); add('tt','video','Watch Time',watch,'tt');
+add('yt','video','Subs',ytSubs,'yt'); add('yt','video','Views',views,'yt'); add('yt','video','Watch Time',watch,'yt'); add('yt','other','Comments',comments,'yt');
+add('tg','social','Members',follows,'tg'); add('tg','social','Views',views,'tg');
+add('threads','social','Followers',follows,'threads'); add('threads','social','Likes',likes,'threads');
+add('spotify','music','Followers',follows,'spotify'); add('spotify','music','Plays',views,'spotify');
+add('boomplay','music','Followers',follows,'boomplay'); add('boomplay','music','Plays',views,'boomplay');
+add('audiomack','music','Followers',follows,'audiomack'); add('audiomack','music','Plays',views,'audiomack');
 
-let curCat='all', curPlat='all';
+let curCat='all',curPlat='all';
 function render(){
- const grid=document.getElementById('grid'); grid.innerHTML='';
+ const g=document.getElementById('grid'); g.innerHTML='';
  services.filter(s=>(curCat==='all'||s.cat===curCat)&&(curPlat==='all'||s.platform===curPlat)).forEach(s=>{
   const d=document.createElement('div'); d.className='card '+s.css;
-  d.innerHTML=`<small style="color:${s.css==='fb'?'#1877F2':s.css==='ig'?'#ff006a':s.css==='yt'?'#ff0000':s.css==='spotify'?'#1DB954':'#00f2ea'}">${s.platform.toUpperCase()} • ${s.metric}</small><div>${s.label}</div><h3>${s.price} KSH</h3><button class="btn ${s.css}" onclick="buy('${s.platform} ${s.metric} ${s.label}','${s.price}')">BUY BOOST ⚡</button>`;
-  grid.appendChild(d);
+  d.innerHTML=`<small>${s.platform.toUpperCase()} • ${s.metric}</small><div>${s.label}</div><h3>${s.price} KSH</h3><button class="btn" onclick="openModal('${s.platform} ${s.metric} ${s.label}','${s.price} KSH')">BUY BOOST ⚡</button>`;
+  g.appendChild(d);
  });
 }
-function filterCat(c,el){ curCat=c; document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); el.classList.add('active'); render(); }
-function filterPlat(p,el){ curPlat=p; document.querySelectorAll('.plat').forEach(t=>t.classList.remove('active')); el.classList.add('active'); render(); }
-function buy(item,price){
- const msg=`Habari Kenya Boost! Nataka: ${item} - ${price} KSH. Pochi: 0794147629`;
+function filterCat(c,el){curCat=c; document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); el.classList.add('active'); render();}
+function filterPlat(p,el){curPlat=p; document.querySelectorAll('.plat').forEach(t=>t.classList.remove('active')); el.classList.add('active'); render();}
+function openModal(item,price){ curItem={item,price}; document.getElementById('mTitle').innerText=item; document.getElementById('mPrice').innerText=price + ' • Pochi: 0794147629'; document.getElementById('modal').classList.add('show'); }
+function closeModal(){ document.getElementById('modal').classList.remove('show'); document.getElementById('linkInput').value=''; }
+function confirmBuy(){
+ const link=document.getElementById('linkInput').value; const phone=document.getElementById('phoneInput').value;
+ if(!link||link.length<5){ alert('Weka LINK yako halali!'); return; }
+ const msg=`KENYA BOOST ORDER 🔥\n\nSERVICE: ${curItem.item}\nLINK: ${link}\nPHONE: ${phone}\nBEI: ${curItem.price}\nPOCHI: 0794147629 - Nitalipa`;
  window.open(`https://wa.me/254794147629?text=${encodeURIComponent(msg)}`,'_blank');
+ closeModal();
+ alert('Sawa! Lipa ' + curItem.price + ' kwa Pochi 0794147629 kisha tutaanza mara moja!');
 }
 render();
 </script>
