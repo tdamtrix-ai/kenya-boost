@@ -2,50 +2,86 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kenya Boost</title>
+<title>KENYA BOOST AUTO</title>
 <style>
-body{margin:0;background:#080808;color:#fff;font-family:Arial}
-.top-menu{display:flex;justify-content:space-around;background:#111;padding:10px 0;position:sticky;top:0;z-index:99;border-bottom:2px solid #ff0000}
-.top-menu a{color:#aaa;text-decoration:none;text-align:center;font-size:11px}
-.top-menu a.active{color:#fff}
-.top-menu a span{display:block;font-size:20px}
-.hero{text-align:center;padding:25px;background:linear-gradient(#111,#080808)}
-.card{background:#151515;border-radius:15px;padding:20px;margin:15px;border:1px solid #222}
-.pochi{color:#ffcc00;font-size:22px;font-weight:bold}
-.btn{background:#ff0000;color:#fff;padding:12px;border-radius:25px;display:block;text-align:center;text-decoration:none;margin-top:10px;font-weight:bold}
+body{margin:0;background:#0e0e0e;color:#fff;font-family:Arial;padding-bottom:70px}
+.header{background:linear-gradient(135deg,#0040ff 0%,#00aa44 50%,#ff0033 100%);border-radius:20px;margin:12px;padding:25px 15px;text-align:center}
+.header h1{margin:0;font-size:28px;font-weight:900;letter-spacing:1px}
+.header h1 b{color:#ffdd00}
+.header p{font-size:11px;margin:5px 0;opacity:0.9}
+.tabs{display:flex;gap:8px;padding:10px 12px;overflow-x:auto}
+.tab{padding:10px 18px;border-radius:25px;border:0;font-weight:bold;font-size:12px;white-space:nowrap;cursor:pointer}
+.tab.all{background:#0088ff;color:#fff}
+.tab.social{background:#222;color:#fff}
+.tab.music{background:#222;color:#fff}
+.tab.video{background:#222;color:#fff}
+.tab.active{box-shadow:0 0 10px currentColor}
+.platforms{display:flex;flex-wrap:wrap;gap:8px;padding:5px 12px}
+.plat{padding:8px 14px;border-radius:20px;background:#1a1a1a;border:1px solid #333;font-size:12px;font-weight:bold}
+.plat.active{border-color:#ffcc00;color:#fff}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px}
+.card{background:#161616;border-radius:15px;padding:12px;text-align:center;border:1px solid #222}
+.card.best{border-color:#ffcc00;box-shadow:0 0 10px rgba(255,204,0,0.3)}
+.card.popular{border-color:#ffcc00}
+.badge{font-size:9px;padding:3px 8px;border-radius:10px;float:right;font-weight:bold}
+.badge.best{background:#0088ff}
+.badge.popular{background:#ffcc00;color:#000}
+.card small{color:#0088ff;font-weight:bold;font-size:11px}
+.card h3{margin:8px 0;font-size:20px}
+.btn{width:100%;background:#0088ff;color:#fff;border:0;padding:10px;border-radius:20px;font-weight:bold;margin-top:8px}
+.bottom{position:fixed;bottom:0;left:0;right:0;background:#111;display:flex;justify-content:space-around;padding:10px 0;border-top:1px solid #222}
+.bottom a{color:#666;text-decoration:none;font-size:11px;text-align:center}
+.bottom a.active{color:#0088ff}
 </style>
 </head>
 <body>
 
-<div class="top-menu">
-<a href="index.html" class="active"><span>🏠</span>HOME</a>
-<a href="orders.html"><span>📦</span>ORDERS</a>
-<a href="wallet.html"><span>💳</span>WALLET</a>
-<a href="profile.html"><span>👤</span>PROFILE</a>
-<a href="support.html"><span>💬</span>SUPPORT</a>
+<div class="header">
+<h1>KENYA <b>BOOST</b> AUTO</h1>
+<p>🚀 TikTok • FB • YouTube • Telegram • IG • X • Spotify • Boomplay • Audiomack</p>
+<p>AUTO DELIVERY • LIPA NA M-PESA • 0-5MIN START</p>
 </div>
 
-<div class="hero">
-<h1>🇰🇪 KENYA BOOST</h1>
-<p>Instagram • TikTok • YouTube • Fast & Cheap</p>
+<div class="tabs">
+<button class="tab all active" onclick="filter('all')">ALL 🔥</button>
+<button class="tab social" onclick="filter('social')">SOCIAL 📱</button>
+<button class="tab music" onclick="filter('music')" style="color:#ff00ff">MUSIC 🎵</button>
+<button class="tab video" onclick="filter('video')" style="color:#ff0000">VIDEO ▶️</button>
 </div>
 
-<div class="card">
-<h3>💰 Pochi la Biashara</h3>
-<div class="pochi">0794147629</div>
-<p>Lipa na M-PESA - Inathibitisha 0-5 min</p>
-<a class="btn" href="wallet.html">ANGALIA POCHI</a>
+<div class="platforms">
+<button class="plat active">📱 TikTok</button>
+<button class="plat">📘 Facebook</button>
+<button class="plat">📸 Instagram</button>
+<button class="plat">🐦 Twitter/X</button>
+<button class="plat">▶️ YouTube</button>
+<button class="plat">✈️ Telegram</button>
+<button class="plat">🎧 Spotify</button>
+<button class="plat">💥 Boomplay</button>
+<button class="plat">🔥 Audiomack</button>
 </div>
 
-<div class="card">
-<h3>📦 Orders Zangu</h3>
-<p>Angalia orders zako zote hapa</p>
-<a class="btn" style="background:#0088ff" href="orders.html">FUNGUA ORDERS</a>
+<div class="grid" id="grid">
+<div class="card"><small>TIKTOK</small><div>50 Followers</div><h3>79 KSH</h3><button class="btn">BUY BOOST ⚡</button></div>
+<div class="card"><small>TIKTOK</small><div>200 Followers</div><h3>199 KSH</h3><button class="btn">BUY BOOST ⚡</button></div>
+<div class="card best"><span class="badge best">BEST</span><small>TIKTOK</small><div>500 Followers</div><h3>399 KSH</h3><button class="btn">BUY BOOST ⚡</button></div>
+<div class="card popular"><span class="badge popular">POPULAR</span><small>TIKTOK</small><div>1K Followers</div><h3>699 KSH</h3><button class="btn">BUY BOOST ⚡</button></div>
+<div class="card"><small>TIKTOK</small><div>2K Followers</div><h3>1299 KSH</h3><button class="btn">BUY BOOST ⚡</button></div>
+<div class="card"><small>TIKTOK</small><div>5K Followers</div><h3>2999 KSH</h3><button class="btn">BUY BOOST ⚡</button></div>
 </div>
 
-<div class="card" style="text-align:center">
-<p>📞 0794147629<br>WhatsApp: 0180653168</p>
+<div class="bottom">
+<a href="index.html" class="active">🚀<br>Services</a>
+<a href="orders.html">📋<br>Orders</a>
+<a href="wallet.html">💰<br>Wallet</a>
+<a href="profile.html">👤<br>Profile</a>
 </div>
 
+<script>
+function filter(cat){
+ document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+ event.target.classList.add('active');
+}
+</script>
 </body>
 </html>
